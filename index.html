@@ -1,1 +1,728 @@
-<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>PrzepracujEmocje.pl</title></head><body><h1>PrzepracujEmocje.pl</h1><p>Wersja projektu premium strony.</p></body></html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PrzepracujEmocje.pl | Świadome emocje. Świadome życie.</title>
+
+<meta name="description" content="Praca z emocjami, emocje po trudnych doświadczeniach, wzorce międzypokoleniowe i świadomy rozwój emocjonalny.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--turkus:#48C7C1;
+--turkus-light:#DDF6F4;
+--roz:#E8A7B8;
+--roz-light:#F8E0E8;
+--grafit:#3E3E3E;
+--szary:#6D6D6D;
+--bialy:#FFFFFF;
+--tlo:#FAFAFA;
+  }
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:var(--tlo);
+color:var(--grafit);
+line-height:1.8;
+}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+line-height:1.2;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+section{
+padding:100px 0;
+scroll-margin-top:90px;
+}
+
+/* MENU */
+
+nav{
+position:sticky;
+top:0;
+background:#fff;
+z-index:999;
+box-shadow:0 3px 20px rgba(0,0,0,.05);
+}
+
+.nav-wrapper{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+.logo{
+font-size:1.4rem;
+font-weight:700;
+color:var(--turkus);
+}
+
+.menu{
+display:flex;
+gap:30px;
+}
+
+.menu a{
+text-decoration:none;
+color:var(--grafit);
+font-weight:500;
+}
+
+.menu a:hover{
+color:var(--turkus);
+}
+
+.hamburger{
+display:none;
+border:none;
+background:none;
+font-size:2rem;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+background:linear-gradient(
+135deg,
+var(--turkus-light),
+#f5f5f5,
+var(--roz-light)
+);
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--turkus);
+color:white;
+margin-right:10px;
+}
+
+.btn-secondary{
+border:2px solid var(--turkus);
+color:var(--turkus);
+}
+
+.hero-image img{
+width:100%;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+/* TYTULY */
+
+.section-title{
+text-align:center;
+max-width:800px;
+margin:0 auto 60px;
+}
+
+.section-title h2{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+/* KARTY */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+/* ABOUT */
+
+.about{
+background:white;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:400px 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:30px;
+}
+
+.bio-box{
+background:linear-gradient(
+135deg,
+var(--turkus-light),
+white
+);
+padding:35px;
+border-radius:25px;
+margin-top:20px;
+}
+
+/* DARK SECTION */
+
+.premium{
+background:#565656;
+color:white;
+}
+
+/* BLOG */
+
+.blog{
+background:var(--turkus-light);
+}
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.blog-card{
+background:white;
+padding:30px;
+border-radius:25px;
+}
+
+/* KNOWLEDGE */
+
+.categories{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.category{
+background:var(--roz-light);
+padding:35px;
+border-radius:20px;
+text-align:center;
+font-weight:600;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+background:linear-gradient(
+135deg,
+var(--turkus),
+var(--roz)
+);
+color:white;
+text-align:center;
+}
+
+.newsletter input{
+padding:18px;
+width:350px;
+max-width:90%;
+border:none;
+border-radius:40px;
+margin-top:20px;
+}
+
+.newsletter button{
+padding:18px 28px;
+border:none;
+border-radius:40px;
+background:white;
+margin-left:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* FORMULARZ */
+
+.contact-form{
+max-width:900px;
+margin:auto;
+}
+
+.form-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:16px;
+border:1px solid #ddd;
+border-radius:15px;
+margin-bottom:20px;
+font-family:Montserrat;
+}
+
+.contact-form textarea{
+resize:vertical;
+}
+
+.contact-btn{
+background:var(--turkus);
+color:white;
+border:none;
+padding:16px 35px;
+border-radius:40px;
+cursor:pointer;
+}
+
+.consent-label{
+display:flex;
+gap:12px;
+align-items:flex-start;
+margin-bottom:20px;
+font-size:.95rem;
+}
+
+.consent-label a{
+color:var(--turkus);
+text-decoration:none;
+font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--grafit);
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+footer a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+}
+
+/* COOKIES */
+
+.cookie-banner{
+position:fixed;
+left:20px;
+right:20px;
+bottom:20px;
+
+background:white;
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+z-index:9999;
+}
+
+.cookie-banner button{
+background:var(--turkus);
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-content,
+.cards,
+.about-grid,
+.blog-grid,
+.categories,
+.form-row{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.hamburger{
+display:block;
+}
+
+.menu{
+position:absolute;
+top:80px;
+left:0;
+right:0;
+
+background:white;
+
+flex-direction:column;
+padding:30px;
+text-align:center;
+
+opacity:0;
+visibility:hidden;
+
+transition:.3s;
+}
+
+.menu.active{
+opacity:1;
+visibility:visible;
+}
+
+.cookie-banner{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container nav-wrapper">
+
+<div class="logo">
+PrzepracujEmocje.pl
+</div>
+
+<button class="hamburger" id="hamburger">☰</button>
+
+<div class="menu" id="menu">
+<a href="#home">Start</a>
+<a href="#about">O mnie</a>
+<a href="#blog">Blog</a>
+<a href="#knowledge">Centrum wiedzy</a>
+<a href="#contact">Kontakt</a>
+</div>
+
+</div>
+</nav>
+
+<section id="home" class="hero">
+
+<div class="container hero-content">
+
+<div>
+
+<h1>
+Twoje emocje opowiadają historię,
+której być może jeszcze nie znasz.
+</h1>
+
+<p>
+Zrozum codzienne emocje, doświadczenia życiowe oraz wzorce emocjonalne obecne w rodzinie od pokoleń.
+</p>
+
+<a href="#about" class="btn btn-primary">Poznaj swoją drogę</a>
+<a href="#blog" class="btn btn-secondary">Czytaj artykuły</a>
+
+</div>
+
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900" alt="Praca z emocjami">
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Emocje nie są problemem.</h2>
+<p>Są drogowskazem prowadzącym do większego zrozumienia siebie.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌿 Codzienne emocje</h3>
+<p>Stres, przeciążenie, lęk i napięcia dnia codziennego.</p>
+</div>
+
+<div class="card">
+<h3>🌊 Trudne doświadczenia</h3>
+<p>Odzyskiwanie równowagi po życiowych zmianach.</p>
+</div>
+
+<div class="card">
+<h3>✨ Wzorce międzypokoleniowe</h3>
+<p>Emocje i przekonania przekazywane przez pokolenia.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<div class="container about-grid">
+
+<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800" alt="Andżelika Filipska">
+
+<div>
+
+<h2>Cieszę się, że tu jesteś.</h2>
+
+<div class="bio-box">
+
+<h3>Andżelika Filipska</h3>
+
+<p>
+Od zawsze fascynowało mnie to, jak emocje wpływają na nasze życie, relacje i sposób, w jaki postrzegamy siebie. Stworzyłam PrzepracujEmocje.pl z potrzeby tworzenia miejsca pełnego zrozumienia, refleksji i życzliwości. Moją intencją jest inspirowanie do łagodniejszego spojrzenia na siebie i budowania życia w większej harmonii z tym, co naprawdę czujemy.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="premium">
+<div class="container">
+<h2>To, czego nie przeżywamy świadomie, często wpływa na nasze decyzje.</h2>
+<p>Historia rodziny i doświadczenia życiowe mogą kształtować nasze reakcje bardziej niż przypuszczamy.</p>
+</div>
+</section>
+
+<section id="blog" class="blog">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Blog</h2>
+</div>
+
+<div class="blog-grid">
+
+<div class="blog-card">
+<h3>Dlaczego niektóre emocje wracają po latach?</h3>
+</div>
+
+<div class="blog-card">
+<h3>Jak rozpoznać rodzinne wzorce emocjonalne?</h3>
+</div>
+
+<div class="blog-card">
+<h3>Czy ciało pamięta emocje?</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="knowledge">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Centrum Wiedzy</h2>
+</div>
+
+<div class="categories">
+
+<div class="category">📖 Podstawy emocji</div>
+<div class="category">📖 Regulacja emocjonalna</div>
+<div class="category">📖 Relacje i granice</div>
+<div class="category">📖 Emocje rodzinne</div>
+<div class="category">📖 Rozwój osobisty</div>
+<div class="category">📖 Świadome życie</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="newsletter">
+
+<div class="container">
+
+<h2>Raz w tygodniu chwila dla Ciebie</h2>
+
+<p>Inspiracje, artykuły i wiedza pomagająca lepiej rozumieć siebie.</p>
+
+<form>
+<input type="email" placeholder="Twój adres e-mail" required>
+<button type="submit">Zapisz się</button>
+</form>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Kontakt</h2>
+</div>
+
+<form class="contact-form" action="https://formspree.io/f/TWOJ_ID" method="POST">
+
+<div class="form-row">
+
+<input type="text" name="imie" placeholder="Imię" required>
+
+<input type="email" name="email" placeholder="Adres e-mail" required>
+
+</div>
+
+<input type="text" name="temat" placeholder="Temat">
+
+<textarea name="wiadomosc" rows="7" placeholder="Napisz wiadomość..." required></textarea>
+
+<label class="consent-label">
+
+<input type="checkbox" required>
+
+<span>
+Zapoznałam/em się z
+<a href="polityka-prywatnosci.html">
+Polityką Prywatności
+</a>
+i wyrażam zgodę na przetwarzanie danych osobowych.
+</span>
+
+</label>
+
+<button type="submit" class="contact-btn">
+Wyślij wiadomość
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>PrzepracujEmocje.pl</h3>
+
+<p>Świadome emocje. Świadome życie.</p>
+
+<p>
+<a href="polityka-prywatnosci.html">Polityka Prywatności</a>
+|
+<a href="polityka-cookies.html">Polityka Cookies</a>
+|
+<a href="regulamin.html">Regulamin</a>
+</p>
+
+</footer>
+
+<div id="cookieBanner" class="cookie-banner">
+
+<p>
+🍪 Ta strona korzysta z plików cookies.
+<a href="polityka-cookies.html">Dowiedz się więcej</a>
+</p>
+
+<button id="acceptCookies">
+Akceptuję
+</button>
+
+</div>
+
+<script>
+
+const hamburger=document.getElementById("hamburger");
+const menu=document.getElementById("menu");
+
+hamburger.addEventListener("click",()=>{
+menu.classList.toggle("active");
+});
+
+document.querySelectorAll("#menu a").forEach(link=>{
+link.addEventListener("click",()=>{
+menu.classList.remove("active");
+});
+});
+
+const cookieBanner=document.getElementById("cookieBanner");
+const acceptCookies=document.getElementById("acceptCookies");
+
+if(localStorage.getItem("cookiesAccepted")){
+cookieBanner.style.display="none";
+}
+
+acceptCookies.addEventListener("click",()=>{
+localStorage.setItem("cookiesAccepted","true");
+cookieBanner.style.display="none";
+});
+
+</script>
+
+</body>
+</html>
